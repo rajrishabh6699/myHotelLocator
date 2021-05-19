@@ -83,15 +83,6 @@ const HotelsContainer: React.FC = () => {
                         hotels.map((entry: any) => <HotelCard entry={entry} />)}
                 </div>
 
-
-                {/* {searchData !== "" ? hotels.map((entry: any) => {
-                    const fullName = `${entry.first_name} ${entry.last_name} Hotel`.toLowerCase()
-                    if (fullName.includes(searchData.toLowerCase())) {
-                        return <HotelCard entry={entry} />
-                    }
-                })
-                    :
-                    hotels.map((entry: any) => <HotelCard entry={entry} />)} */}
                 <div style={{ textAlign: "center", marginTop: "55px" }}>
                     {searchData === "" && size !== info && <LoadMore onClick={() => dispatch(fetchHotels(currentPage + 1))}>Load More</LoadMore>}
                 </div>

@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 
 const HotelOuterContainer = styled.div`
 box-sizing:border-box;
-
 width:95%;
 display:flex;
 justify-content:space-between;
@@ -170,7 +169,6 @@ const HotelCard: React.FC<HotelCardProps> = (props) => {
                     <Address>3 Connection Drive, Brunswick VIC, Australia </Address>
                     <Details>
                         <Review>⭐ (4) Supermost</Review>
-                        {/* <Price> $ 121/night</Price> */}
                     </Details>
                 </DataDiv>
             </Hotel>

@@ -64,5 +64,3 @@ const ToggleSwitch: React.FC = () => {
 }
 
 export default ToggleSwitch
-
-// color="#00acee"

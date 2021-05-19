@@ -5,8 +5,6 @@ import { Switch, Route } from 'react-router-dom';
 import DetailsAndMap from './components/DetailsAndMap';
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchHotels } from './redux';
-import ImageSlider from './components/DetailsAndMap/Components/ImageSlider';
-
 
 const App = () => {
 
@@ -23,7 +21,6 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Main} />
         <Route path="/hotel" component={DetailsAndMap} />
-        <Route path="/image" component={ImageSlider} />
       </Switch>
     </>
   );

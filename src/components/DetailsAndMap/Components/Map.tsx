@@ -4,41 +4,42 @@ import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/ap
 import { apiKey } from '../../../keys';
 
 const MapDiv = styled.div`
-width:75vw;
-height:83vh;
-@media (max-width: 576px) {
-    width:0;
-  }
+    width:75vw;
+    height:83vh;
+    @media (max-width: 576px) {
+        width:0;
+    }
 `;
 
 const InfoDataDiv = styled.div`
-height:210px;
-width:240px;
-border:1px solid #c8c8c8;
+    height:210px;
+    width:240px;
+    border:1px solid #c8c8c8;
 `;
 
 const InfoImageDiv = styled.div`
-position: relative;
-height:120px;
-width:230px;
-margin:5px; 
-`
+    position: relative;
+    height:120px;
+    width:230px;
+    margin:5px; 
+`;
+
 const InfoImage = styled.img`
-height:120px;
-width:100%;
+    height:120px;
+    width:100%;
 `;
 
 const InfoTitle = styled.h2`
-color:#696969;
-font-weight:600;
-margin-left:20px;
-margin-top:0;
+    color:#696969;
+    font-weight:600;
+    margin-left:20px;
+    margin-top:0;
 `;
 const InfoAdd = styled.p`
-color: #696969;
-font-size:14px;
-margin-left:20px;
-margin-top:-15px;
+    color: #696969;
+    font-size:14px;
+    margin-left:20px;
+    margin-top:-15px;
 `;
 
 

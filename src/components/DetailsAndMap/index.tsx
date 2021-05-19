@@ -6,8 +6,9 @@ import Map from './Components/Map'
 
 
 const OuterDiv = styled.div`
-display:flex;
+    display:flex;
 `;
+
 const DetailsAndMap: React.FC = (props: any) => {
     return (
         <div>
@@ -17,7 +18,6 @@ const DetailsAndMap: React.FC = (props: any) => {
                 <Map />
             </OuterDiv>
         </div>
-
     )
 }
 
