@@ -11,6 +11,7 @@ const Switch = styled.div`
     padding:5px;
     margin-top:6px;
     transition: all 300ms ease-in-out;
+    
     @media (max-width: 576px) {
         display:none;
     }

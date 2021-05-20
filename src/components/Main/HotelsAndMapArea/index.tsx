@@ -3,6 +3,7 @@ import HotelsContainer from './Hotels/HotelsContainer';
 import MapContainer from './Map/MapContainer';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/rootReducer';
 
 const MainDiv = styled.div`
     width:100vw;
@@ -10,7 +11,7 @@ const MainDiv = styled.div`
 `;
 
 const HotelsAndMapArea: React.FC = () => {
-    const { show } = useSelector((state: any) => state.hotels)
+    const { show } = useSelector((state: RootState) => state.hotels)
 
     return (
         <MainDiv>

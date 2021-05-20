@@ -6,18 +6,18 @@ import AmentiesAC from './AmentiesAC';
 import StarIconComp from './StarIconComp';
 
 const Container = styled.div`
-width:100%;
+    width:100%;
     height:55vh;
     display:flex;
     flex-direction:column;
+
     @media (max-width: 576px) {
         width:100vw;
-    }
+    };
 `;
 
 const TabContainer = styled.div`
-width:100%;
-
+    width:100%;
     display:flex;
     height:7vh;
     justify-content:space-around;
@@ -31,14 +31,15 @@ const TabInfo = styled.button`
     font-weight:500;
     border:none;
     background-color:white;
+
     &:hover{
         color:#318CE7;
         cursor:pointer;
-    }
+    };
 `;
 
 const TabReview = styled.button`
-    width: 50%;
+    width:50%;
     border:none;
     color:#696969;
     height:100%;
@@ -48,19 +49,17 @@ const TabReview = styled.button`
     &:hover{
         color:#318CE7;
         cursor:pointer;
-    }
+    };
 `;
 
 const Amenties = styled.div`
     border-top:1px solid #c8c8c8;
-    
 `
 const AmentiesTitle = styled.h5`
     color:#696969;
     font-weight:500;
     margin-bottom:-10px;
     margin-left:10px;
-
 `;
 
 
@@ -74,23 +73,16 @@ const StarDiv = styled.div`
 const StarTitleDiv = styled.div`
     margin-left:10px;
     margin-right:10px;
-    `;
+`;
 
 const StarTitle = styled.h5`
     color:#696969;
     font-weight:500;
-`
-const StarIconDiv = styled.div``;
-
-const StarIcon = styled.img`
-    width:20px;
-    height:20px;
-    margin-left: 5px;
 `;
 
 const DIV = styled.div`
-display:flex;
-width:100%;
+    display:flex;
+    width:100%;
 `;
 
 const TabDataInfo = styled.div`

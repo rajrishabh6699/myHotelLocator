@@ -5,12 +5,13 @@ import { Switch, Route } from 'react-router-dom';
 import DetailsAndMap from './components/DetailsAndMap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchHotels } from './redux';
+import { RootState } from './redux/rootReducer';
 
 
 const App = () => {
 
   const dispatch = useDispatch();
-  const { currentPage } = useSelector((state: any) => state.hotels);
+  const { currentPage } = useSelector((state: RootState) => state.hotels);
   
   useEffect(() => {
       dispatch(fetchHotels(currentPage))

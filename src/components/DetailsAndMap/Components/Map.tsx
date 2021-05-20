@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { apiKey } from '../../../keys';
+import { images } from '../../../assets';
 
 const MapDiv = styled.div`
     width:75vw;
@@ -18,6 +19,7 @@ const InfoDataDiv = styled.div`
 `;
 
 const InfoImageDiv = styled.div`
+    object-fit:cover;
     position: relative;
     height:120px;
     width:230px;
@@ -59,18 +61,14 @@ const Map: React.FC = () => {
         <MapDiv>
             <LoadScript
                 googleMapsApiKey={apiKey}>
-                <GoogleMap mapContainerStyle={mapStyles} onClick={() => setWind(false)} zoom={13} center={defaultCenter} options={{
-                    gestureHandling: 'greedy',
-                    fullscreenControl: true,
-                    streetViewControl: true,
-                }}>
+                <GoogleMap mapContainerStyle={mapStyles} onClick={() => setWind(false)} zoom={13} center={defaultCenter}>
                     <Marker position={defaultCenter} onClick={() => setWind(!wind)} />
                     {wind
                         &&
                         <InfoWindow position={defaultCenter} onCloseClick={() => setWind(!wind)} options={{ pixelOffset: new window.google.maps.Size(0, -42) }}  >
                             <InfoDataDiv>
                                 <InfoImageDiv>
-                                    <InfoImage src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/41/ea/67/41ea67d9-cbc8-b18d-88e0-bebcedb699c4/source/512x512bb.jpg" />
+                                    <InfoImage src={images.detailMapInfoWindow} />
                                 </InfoImageDiv>
                                 <InfoTitle>LocoNav</InfoTitle>
                                 <InfoAdd>B-13/14, LocoNav ThinkValley, Sector 32, Gurugram, Haryana 122003</InfoAdd>

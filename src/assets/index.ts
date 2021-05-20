@@ -25,4 +25,5 @@ export const images = {
         image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
     },
   ],
+  detailMapInfoWindow: "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/41/ea/67/41ea67d9-cbc8-b18d-88e0-bebcedb699c4/source/512x512bb.jpg"
 }
