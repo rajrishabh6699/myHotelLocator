@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import DataTabs from './DataTabs';
-import ImageSlider from './ImageSlider';
-
+import { images } from '../../../assets';
 
 const DetailDiv = styled.div`
     display:flex;
     flex-direction:column;
     width:25vw;
     height:83vh;
+    
     @media (max-width: 576px) {
         width:100vw;
     }
@@ -40,7 +40,7 @@ const HotelName = styled.h3`
     font-weight: 600;
 `;
 
-const Details = () => {
+const Details:React.FC = () => {
     interface IState {
         detail?: string;
     }
@@ -48,16 +48,15 @@ const Details = () => {
     const location = useLocation();
     const detail = (location.state as IState).detail
 
-
-
     return (
         <DetailDiv>
             <ImageDiv>
-                {/* <ImageSlider /> */}
-                <HotelImage src="https://ak.picdn.net/shutterstock/videos/6223385/thumb/1.jpg" alt="hotel" />
+                <HotelImage src={images.detailsHotelImage} alt="hotel" />
             </ImageDiv>
             <HotelNameDiv>
-                <HotelName>{detail} Hotel</HotelName>
+                <HotelName>
+                    {detail ? `${detail} Hotel` : ""}
+                </HotelName>
             </HotelNameDiv>
             <DataTabs />
         </DetailDiv>)

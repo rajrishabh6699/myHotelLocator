@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import RoomIcon from '@material-ui/icons/Room';
-import SearchIcon from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ActionType } from '../../redux/hotels/hotelTypes';
-import MenuIcon from '@material-ui/icons/Menu';
+import {images} from '../../assets';
 
 const NavbarDiv = styled.div`
     background-color: white;
@@ -40,7 +38,7 @@ const Search = styled.input`
 
 const SearchButton = styled.button`
     border:none;
-    margin-left:-71px;
+    margin-left:-60px;
     height:2rem;
     background-color: white;
 
@@ -85,7 +83,26 @@ const MenuIconDiv = styled.div`
     display: none;
     @media (max-width: 680px) {
         display:contents;
-     }
+    }
+
+    &:hover{
+        cursor:pointer;
+    }
+`;
+
+const MenuIcon = styled.img`
+    height:80px;
+    width:60px;
+`
+
+const BrandLogo = styled.img`
+    height:70px;
+    width:70px;
+`;
+
+const SearchIcon = styled.img`
+    height:25px;
+    width:25px;
 `;
 
 const Navbar: React.FC = () => {
@@ -95,9 +112,9 @@ const Navbar: React.FC = () => {
     return (
         <NavbarDiv>
             <SearchDiv>
-                <Link to="/"><RoomIcon style={{ color: "#318ce7", fontSize: "50px" }} onClick={() => { dispatch({ type: ActionType.SEARCH_HOTEL_DATA, payload: "" }); setSearchValue(""); }} /></Link>
+                <Link to="/"><BrandLogo src={images.logoImage} onClick={() => { dispatch({ type: ActionType.SEARCH_HOTEL_DATA, payload: "" }); setSearchValue(""); }} alt="logo" /></Link>
                 <Search type="text" placeholder="Search..." value={searchValue} onChange={(e) => { setSearchValue(e.target.value); dispatch({ type: ActionType.SEARCH_HOTEL_DATA, payload: e.target.value }); }} />
-                <SearchButton onClick={() => { dispatch({ type: ActionType.SEARCH_HOTEL_DATA, payload: searchValue }); }}><SearchIcon style={{ color: "gray" }} /></SearchButton>
+                <SearchButton onClick={() => { dispatch({ type: ActionType.SEARCH_HOTEL_DATA, payload: searchValue }); }}><SearchIcon src={images.searchIcon} alt="search" /></SearchButton>
             </SearchDiv>
             <ListDiv>
                 <List>
@@ -108,7 +125,7 @@ const Navbar: React.FC = () => {
                 </List>
             </ListDiv>
             <MenuIconDiv>
-                <MenuIcon style={{ color: "#696969", fontSize: "60px" }} />
+                <MenuIcon src={images.menuIcon} alt="menu" />
             </MenuIconDiv>
         </NavbarDiv>
     )

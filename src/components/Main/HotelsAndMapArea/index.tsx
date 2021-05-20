@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 const MainDiv = styled.div`
-width:100vw;
-display:flex;
+    width:100vw;
+    display:flex;
 `;
 
 const HotelsAndMapArea: React.FC = () => {

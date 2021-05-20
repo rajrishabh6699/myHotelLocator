@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BreadCrumbsComp from './Components/BreadCrumbsComp';
+import GoToComp from './Components/GoToComp';
 import Details from './Components/Details';
 import Map from './Components/Map'
 
@@ -12,7 +12,7 @@ const OuterDiv = styled.div`
 const DetailsAndMap: React.FC = (props: any) => {
     return (
         <div>
-            <BreadCrumbsComp />
+            <GoToComp />
             <OuterDiv>
                 <Details />
                 <Map />

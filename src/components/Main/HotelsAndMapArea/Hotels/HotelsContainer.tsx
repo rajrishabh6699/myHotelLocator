@@ -8,44 +8,44 @@ import SkeletonCard from './SkeletonCard'
 
 
 const HotelDiv = styled.div`
-width: ${(props) => props.theme.width};
-height:80vh;
-overflow:scroll;
-transition: all 600ms ease-in-out;
+    width: ${(props) => props.theme.width};
+    height:80vh;
+    overflow:scroll;
+    transition: all 600ms ease-in-out;
 
-@media (max-width: 576px) {
-    width:100%;
-  }
+    @media (max-width: 576px) {
+        width:100%;
+    }
 `;
 
 const Status = styled.h1`
-font-weight:500;
-color:	#484848;
-margin-left:1rem;
-margin-top:5px;
+    font-weight:500;
+    color:	#484848;
+    margin-left:1rem;
+    margin-top:5px;
 `;
 
 const LoadMore = styled.button`
-margin-top:-20px;
-border: 1px solid #C8C8C8;
-color: white;
-border-radius:5px;
-height:3rem;
-font-weight:600;
-background-color: #318CE7;;
+    margin-top:-20px;
+    border: 1px solid #C8C8C8;
+    color: white;
+    border-radius:5px;
+    height:3rem;
+    font-weight:600;
+    background-color: #318CE7;;
 
-&:hover{
-    cursor:pointer;
-    border: 1px solid #318CE7;
-    color: 	#318CE7;
-    box-shadow: 0px 6px 15px rgba(14, 104, 221, 0.1);
-    background-color:white;
-}
+    &:hover{
+        cursor:pointer;
+        border: 1px solid #318CE7;
+        color: 	#318CE7;
+        box-shadow: 0px 6px 15px rgba(14, 104, 221, 0.1);
+        background-color:white;
+    }
 `;
 
 const Skeleton = styled.div`
-height:100%;
-width:100%;
+    height:100%;
+    width:100%;
 `;
 
 
@@ -61,7 +61,7 @@ const HotelsContainer: React.FC = () => {
 
 
     const dispatch = useDispatch()
-    const { loading, hotels, error, info, currentPage, searchData, show } = useSelector((state: any) => state.hotels)
+    const { loading, hotels, error, info, currentPage, searchData, show } = useSelector((state:any) => state.hotels)
     const size = hotels.length;
 
     return (
