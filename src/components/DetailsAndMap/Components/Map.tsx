@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { apiKey } from '../../../keys';
@@ -15,12 +15,12 @@ const MapDiv = styled.div`
 const InfoDataDiv = styled.div`
     height:210px;
     width:240px;
-    border:1px solid #c8c8c8;
+    border:1px solid#c8c8c8;
 `;
 
 const InfoImageDiv = styled.div`
     object-fit:cover;
-    position: relative;
+    position:relative;
     height:120px;
     width:230px;
     margin:5px; 
@@ -56,7 +56,7 @@ const Map: React.FC = () => {
     }
 
 
-    const [wind, setWind] = React.useState(false)
+    const [wind, setWind] = useState(false)
     return (
         <MapDiv>
             <LoadScript

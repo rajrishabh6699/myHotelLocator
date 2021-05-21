@@ -19,7 +19,7 @@ const HotelDiv = styled.div<{ show: boolean }>`
 `;
 
 const Status = styled.h1`
-    font-weight:500;
+    font-weight:500;    
     color:#484848;
     margin-left:1rem;
     margin-top:5px;

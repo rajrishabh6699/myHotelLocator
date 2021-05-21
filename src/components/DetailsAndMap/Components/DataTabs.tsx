@@ -21,7 +21,7 @@ const TabContainer = styled.div`
     display:flex;
     height:7vh;
     justify-content:space-around;
-    border-bottom:1px solid #c8c8c8;
+    border-bottom:1px solid#c8c8c8;
 `;
 
 const TabInfo = styled.button`

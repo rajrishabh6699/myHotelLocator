@@ -9,15 +9,15 @@ const OuterDiv = styled.div`
     display:flex;
 `;
 
-const DetailsAndMap: React.FC = (props: any) => {
+const DetailsAndMap: React.FC = () => {
     return (
-        <div>
+        <>
             <GoToComp />
             <OuterDiv>
                 <Details />
                 <Map />
             </OuterDiv>
-        </div>
+        </>
     )
 }
 

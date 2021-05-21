@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import HotelsContainer from './Hotels/HotelsContainer';
 import MapContainer from './Map/MapContainer';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/rootReducer';
+import { fetchHotels } from '../../../redux';
 
 const MainDiv = styled.div`
     width:100vw;
@@ -11,7 +12,14 @@ const MainDiv = styled.div`
 `;
 
 const HotelsAndMapArea: React.FC = () => {
-    const { show } = useSelector((state: RootState) => state.hotels)
+    const dispatch = useDispatch();
+    const { show, currentPage, hotels} = useSelector((state: RootState) => state.hotels);
+
+    useEffect(() => {
+        if (hotels.length === 0){
+            dispatch(fetchHotels(currentPage));
+        }
+    }, [])
 
     return (
         <MainDiv>

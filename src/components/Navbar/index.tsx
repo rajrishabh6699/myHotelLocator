@@ -6,10 +6,10 @@ import { ActionType } from '../../redux/hotels/hotelTypes';
 import {images} from '../../assets';
 
 const NavbarDiv = styled.div`
-    background-color: white;
-    height:12vh;
+    background-color:white;
+    height:12%;
     display:flex;
-    justify-content: space-between;
+    justify-content:space-between;
 `;
 
 const SearchDiv = styled.div`
@@ -20,19 +20,19 @@ const SearchDiv = styled.div`
 `;
 
 const Search = styled.input`
-    border:1px solid #C8C8C8;
+    border:1px solid#C8C8C8;
     width:40vw;
     height:2rem;
     margin : 1rem;
     padding-left:1rem;
     border-radius:6px;
-    box-shadow: 0px 4px 11px #C8C8C8;
+    box-shadow: 0px 4px 11px#C8C8C8;
     margin-right:0;
 
     &:hover{
-        border: 1px solid #318CE7;
-        color: 	#696969;
-        box-shadow: 0px 6px 15px rgba(14, 104, 221, 0.1);  
+        border: 1px solid#318CE7;
+        color:#696969;
+        box-shadow: 0px 6px 15pxrgba(14, 104, 221, 0.1);  
     }
 `;
 
@@ -63,18 +63,17 @@ const List = styled.ul`
     justify-content: flex-end;
 `;
 
-
 const ListItem = styled.li`
     position:relative;
     margin:1rem;
-    color: #696969;
+    color:#696969;
     font-weight:500;
     font-size: 1rem;
 
     &:hover{
         cursor:pointer;
         transform: translateY(-3px);
-        color:  #318CE7;
+        color:#318CE7;
         text-shadow: 0 0 0px #89CFF0;
     }
 `;

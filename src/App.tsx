@@ -1,20 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Main from './components/Main/';
 import { Switch, Route } from 'react-router-dom';
 import DetailsAndMap from './components/DetailsAndMap';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchHotels } from './redux';
-import { RootState } from './redux/rootReducer';
 
 const App = () => {
-
-  const dispatch = useDispatch();
-  const { currentPage } = useSelector((state: RootState) => state.hotels);
-  
-  useEffect(() => {
-      dispatch(fetchHotels(currentPage))
-  }, []);
 
   return (
     <>

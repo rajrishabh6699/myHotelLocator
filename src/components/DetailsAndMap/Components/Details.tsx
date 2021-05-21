@@ -30,7 +30,7 @@ const HotelNameDiv = styled.div`
     width:100%;
     height:auto;
     max-height:8vh;
-    border-bottom: 1px solid #c8c8c8;
+    border-bottom: 1px solid#c8c8c8;
     text-align: center;
 `;
 
@@ -46,7 +46,7 @@ const Details:React.FC = () => {
     }
 
     const location = useLocation();
-    const detail = (location.state as IState).detail
+    const detail = location.state ? (location.state as IState).detail : "XYZ";
 
     return (
         <DetailDiv>
@@ -55,7 +55,7 @@ const Details:React.FC = () => {
             </ImageDiv>
             <HotelNameDiv>
                 <HotelName>
-                    {detail ? `${detail} Hotel` : ""}
+                    {`${detail} Hotel`}
                 </HotelName>
             </HotelNameDiv>
             <DataTabs />

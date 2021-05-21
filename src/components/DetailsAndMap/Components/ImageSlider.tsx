@@ -31,7 +31,7 @@ display:flex;
 `;
 
 const CarouselDivActive = styled.div`
-display:flex;
+    display:flex;
     height: 100%;
     width:100%;
     opacity: 1;
