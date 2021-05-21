@@ -137,8 +137,7 @@ interface HotelCardProps {
 }
 
 const HotelCard: React.FC<HotelCardProps> = (props) => {
-    const fullName = `${props.entry.first_name} ${props.entry.last_name}`
-
+    const fullName =  props.entry ? `${props.entry.first_name} ${props.entry.last_name}` : "" ;
 
     const history = useHistory()
     return (

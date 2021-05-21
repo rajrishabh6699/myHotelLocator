@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import Review from './Review';
 import InfoData from './InfoData';
 import AmentiesAC from './AmentiesAC';
@@ -85,9 +85,9 @@ const DIV = styled.div`
     width:100%;
 `;
 
-const TabDataInfo = styled.div`
-    width:${(props) => props.theme.infoWidth};
-    transition:${props => props.theme?.infoTransition};
+const TabDataInfo = styled.div<{ infoActive: boolean }>`
+    width:${(props) => props.infoActive ? "100%" : "0%" };
+    transition:${props => props.infoActive && "width 200ms"};
     position:relative;
     height:48vh;
     display:flex;
@@ -97,9 +97,9 @@ const TabDataInfo = styled.div`
 
 `;
 
-const TabDataReview = styled.div`
-    width:${(props) => props.theme.reviewWidth};
-    transition:${props => props.theme?.reviewTransition};
+const TabDataReview = styled.div<{ infoActive: boolean }>`
+    width:${(props) => props.infoActive ? "0%" : "100%"};
+    transition:${props => props.infoActive && "width 200ms"};
     position:relative;
     height:48vh;
     display:flex;
@@ -108,44 +108,27 @@ const TabDataReview = styled.div`
     box-sizing:border-box;
 `;
 
-const BorderDiv = styled.div`
+const BorderDiv = styled.div<{ infoActive: boolean }>`
     position:relative;
     width: 50%;
     border-bottom: 3px solid #0097be;
     margin-top: -3px;
-    left:${(props) => props.theme.left};
+    left:${(props) => props.infoActive ? "0" : "50%"};
     transition: left 200ms;
 `;
 
 const DataTabs: React.FC = () => {
     const [infoActive, setInfoActive] = useState(true);
 
-    const info = {
-        infoWidth: "100%",
-        reviewWidth: "0",
-        reviewTransition: "width 200ms",
-        infoTransition: "width 200ms",
-        left: "0",
-    }
-
-    const review = {
-        infoWidth: "0",
-        reviewWidth: "100%",
-        infoTransition: "width 200ms",
-        reviewTransition: "width 200ms",
-        left: "50%",
-    }
-
     return (
-        <ThemeProvider theme={infoActive ? info : review}>
             <Container>
                 <TabContainer>
                     <TabInfo onClick={() => setInfoActive(true)}>Info</TabInfo>
                     <TabReview onClick={() => setInfoActive(false)}> Reviews</TabReview>
                 </TabContainer>
-                <BorderDiv />
+                <BorderDiv infoActive={infoActive} />
                 <DIV>
-                    <TabDataInfo>
+                    <TabDataInfo infoActive={infoActive}>
                         <InfoData />
                         <InfoData />
                         <InfoData />
@@ -155,7 +138,7 @@ const DataTabs: React.FC = () => {
                             <AmentiesAC />
                         </Amenties>
                     </TabDataInfo>
-                    <TabDataReview>
+                    <TabDataReview infoActive={infoActive}>
                         <StarDiv>
                             <StarTitleDiv>
                                 <StarTitle>4 Reviews</StarTitle>
@@ -169,7 +152,6 @@ const DataTabs: React.FC = () => {
                     </TabDataReview>
                 </DIV>
             </Container>
-        </ThemeProvider>
     )
 }
 

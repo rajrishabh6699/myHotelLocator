@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { ActionType } from '../../../redux/hotels/hotelTypes';
 
-const Switch = styled.div`
+const Switch = styled.div<{ active: boolean }>`
     width:35px;
     height:15px;
-    background-color: ${(props) => props.theme.body};
+    background-color: ${(props) => props.active ? "#00acee" : "gray"};
     border-radius:30px;
     padding:5px;
     margin-top:6px;
@@ -21,26 +21,16 @@ const Switch = styled.div`
     }
 `;
 
-const InnerCircle = styled.div`
+const InnerCircle = styled.div<{ active: boolean }>`
     width:15px;
     height:15px;
     background-color:white;
     border-radius:50%;
-    margin-left: ${(props) => props.theme.leftMargin};
+    margin-left: ${(props) => props.active && "20px" };
     transition: all 300ms ease-in-out;
 `;
 
 const ToggleSwitch: React.FC = () => {
-
-    const active = {
-        body: "#00acee",
-        leftMargin: "20px"
-    }
-
-    const notActive = {
-        body: "gray",
-    }
-
     const [activeState, setActiveState] = useState(true);
     const dispatch = useDispatch()
 
@@ -55,12 +45,10 @@ const ToggleSwitch: React.FC = () => {
     }
 
     return (
-        <ThemeProvider theme={activeState ? active : notActive}>
-            <Switch onClick={stateToggler}>
-                <InnerCircle></InnerCircle>
+            <Switch active={activeState} onClick={stateToggler}>
+                <InnerCircle active={activeState} />
             </Switch>
-        </ThemeProvider>
-    )
+    );
 }
 
 export default ToggleSwitch;

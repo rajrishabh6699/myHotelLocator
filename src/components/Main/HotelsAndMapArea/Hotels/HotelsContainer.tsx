@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import HotelCard from './HotelCard';
 import { fetchHotels } from '../../../../redux';
@@ -7,8 +7,8 @@ import Loader from './Loader';
 import SkeletonCard from './SkeletonCard';
 import {RootState} from '../../../../redux/rootReducer';
 
-const HotelDiv = styled.div`
-    width: ${(props) => props.theme.width};
+const HotelDiv = styled.div<{ show: boolean }>`
+    width: ${(props) => props.show? "50%" : "100%"};
     height:80vh;
     overflow:scroll;
     transition: all 600ms ease-in-out;
@@ -58,22 +58,12 @@ interface entryType {
 
 const HotelsContainer: React.FC = () => {
 
-    const fullScreen = {
-        width: "100%"
-    }
-
-    const halfScreen = {
-        width: "50%",
-    }
-
-
     const dispatch = useDispatch()
     const { loading, hotels, error, info, currentPage, searchData, show } = useSelector((state:RootState) => state.hotels)
     const size = hotels.length;
 
     return (
-        <ThemeProvider theme={show ? halfScreen : fullScreen}>
-            <HotelDiv>
+            <HotelDiv show={show}>
                 {error && <Status>{error}</Status>}
                 <div>
                     {searchData === "" ? <Status>{size} places to stay</Status> : <Status>Here is the matching result!</Status>}
@@ -94,8 +84,7 @@ const HotelsContainer: React.FC = () => {
                     {searchData === "" && size !== info && <LoadMore onClick={() => dispatch(fetchHotels(currentPage + 1))}>Load More</LoadMore>}
                 </div>
             </HotelDiv>
-        </ThemeProvider>
 
     )
 }
-export default HotelsContainer
+export default HotelsContainer;
