@@ -144,17 +144,14 @@ const MapContainer: React.FC = () => {
           center={centerCoord}
           onClick={() => setSelected(null)}
         >
-          {hotels.map((item) => {
+          {hotels.map((item: SelectTypes) => {
             return (
               <Marker key={item.name} position={{ lat: Number(item.lat), lng: Number(item.lng) }} onClick={() => onSelect(item)} />
             )
           })
           }
 
-          {selected
-            &&
-            selected.id
-            &&
+          {selected?.id &&
             <InfoWindow position={{ lat: Number(selected.lat), lng: Number(selected.lng) }} onCloseClick={() => setSelected(null)} options={{ pixelOffset: new window.google.maps.Size(0, -42) }}>
               <InfoDiv>
                 <InfoImageDiv>

@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchHotels } from './redux';
 import { RootState } from './redux/rootReducer';
 
-
 const App = () => {
 
   const dispatch = useDispatch();
